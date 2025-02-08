@@ -21,7 +21,7 @@ def merge_records(records):
     return list(merged.values())
 
 def correction_of_info(contacts_list_csv: list)-> list:
-    phone_pattern = re.compile(r'(?:(?:\+7|8)\s*)?\(?(\d{3})\)?\s*[-\s]?(\d{3})[-\s]?(\d{2})[-\s]?(\d{2})(?:\s*доб\.\s*(\d+))?', re.VERBOSE)
+    phone_pattern = re.compile(r'(?:\+7|8)\s*\(?(\d{3})\)?[\s-]?(\d{3})[\s-]?(\d{2})[\s-]?(\d{2})(?:\s*доб\.\s*(\d+))?(?:\s*\(\s*доб\.\s*(\d+)\))?', re.VERBOSE)
     phonebook_csv = []
     # Добаляем название столбцов
     phonebook_csv.append(contacts_list_csv[0])
